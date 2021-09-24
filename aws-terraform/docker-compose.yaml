@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  terraform:
+    image: davidkuda/aws-terraform:arm_mac_m1
+      
+    volumes:
+      - ./terraform/:/home/terraform/src/
+      - $HOME/.aws/:/home/terraform/.aws/:ro
+
+    environment:
+      AWS_PROFILE: DataDave
+      # AWS_ACCESS_KEY_ID: VERY SECRET
+      # AWS_REGION: us-east-1
+      # AWS_SECRET_ACCESS_KEY: SUCH SECRET
+
